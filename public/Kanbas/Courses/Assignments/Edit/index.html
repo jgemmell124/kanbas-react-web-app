@@ -1,0 +1,94 @@
+<select>
+  <option>SpeedGrader</option>
+</select>
+<hr/>
+
+<h2>Assignment Name</h2>
+<form name="new-assignment">
+  <input type="text"/>
+  <br/><br/>
+
+  <textarea cols="30"></textarea>
+  <br/><br/>
+
+  <label for="points">Points</label>
+  <br/>
+  <input title="points" value="POINTS" id="points" name="points" type="number"/>
+  <br/><br/>
+
+  <label for="assignment-group">Asisngment Group</label>
+  <br/>
+  <select id="assignment-group">
+    <option>ASSIGNMENTS</option>
+  </select>
+  <br/><br/>
+
+  <label>Display Grade as</label>
+  <br/>
+
+  <select id="grade-type" name="select-grade-type">
+    <option>Percentage</option>
+  </select>
+  <br/><br/>
+
+  <label for="submission-type">Submission Type</label>
+  <br/>
+
+  <select id="submission-type">
+    <option>Online</option>
+  </select>
+  <br/><br/>
+
+  <label>Online Entry Options</label>
+  <br/>
+
+  <input type="checkbox" value="TEXT-ENTRY"
+    name="text-entry" id="chkbox-text-entry"/>
+  <label for="chkbox-text-entry">Text Entry</label>
+  <br/>
+
+  <input type="checkbox" value="WEBSITE"
+    name="check-website" id="chkbox-website"/>
+  <label for="chkbox-website">Website URL</label>
+  <br/>
+
+  <input type="checkbox" value="MEDIA"
+    name="check-media" id="chkbox-media"/>
+  <label for="chkbox-media">Media Recordings</label>
+  <br/>
+
+  <input type="checkbox" value="ANNOTATION"
+    name="check-annotation" id="chkbox-annotation"/>
+  <label for="chkbox-annotation">Student Annotation</label>
+  <br/>
+
+  <input type="checkbox" value="FILE"
+    name="check-file" id="chkbox-file"/>
+  <label for="chkbox-file">File Upload</label>
+  <br/><br/>
+
+  <label for="assing-to">Assign to</label>
+  <br/>
+  <input id="assign-to" type="text"/>
+  <br/><br/>
+
+  <label for="due-date">Due</label><br/>
+  <input type="date" id="due-date"/>
+  <br/><br/>
+
+  <label for="avail-from">Aviable From</label><br/>
+  <input type="date" id="avail-from"/>
+  <br/><br/>
+
+  <label for="until-date">Until</label><br/>
+  <input type="date" id="until-date"/>
+  <br/><br/>
+
+</form>
+
+<a href="/Kanbas/Courses/Assignments/screen.html">
+  <button>Cancel</button>
+</a>
+<a href="/Kanbas/Courses/Assignments/screen.html">
+  <button>Save</button>
+</a>
