@@ -1,0 +1,28 @@
+p {
+	background-color: blue;
+}
+
+.wd-bg-color-red {
+	background-color: #ff7070;
+}
+
+.wd-bg-color-black {
+	background-color: black;
+}
+
+.wd-bg-color-white {
+	background-color: white;
+}
+
+.wd-fg-color-black { color: black; }
+.wd-fg-color-white { color: white; }
+.wd-fg-color-blue { color: #7070ff; }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+body * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
