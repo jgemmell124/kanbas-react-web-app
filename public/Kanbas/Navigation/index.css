@@ -40,3 +40,7 @@
 .wd-kanbas-navigation li.wd-account i {
 	color: white;
 }
+
+.wd-kanbas-navigation li.wd-account.wd-active i {
+	color: red;
+}
