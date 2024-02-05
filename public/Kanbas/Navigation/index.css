@@ -4,6 +4,7 @@
 	padding: 0px;
 	margin: 0px;
 	width: 80px;
+	height: 100%;
 }
 
 .wd-kanbas-navigation li {
@@ -29,6 +30,7 @@
 .wd-kanbas-navigation a {
 	color: white;
 	text-decoration: none;
+  display: inline;
 }
 
 .wd-kanbas-navigation a i {
