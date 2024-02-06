@@ -13,6 +13,7 @@
 
 .wd-course-card:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-decoration: underline grey 1px;
 }
 
 .wd-course-card img {
@@ -23,6 +24,7 @@
 .wd-course-card p {
   color: grey;
 }
+
 
 .wd-course-card i {
   color: grey;
