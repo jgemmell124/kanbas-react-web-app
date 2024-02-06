@@ -30,7 +30,6 @@
 .wd-kanbas-navigation a {
 	color: white;
 	text-decoration: none;
-  display: inline;
 }
 
 .wd-kanbas-navigation a i {
@@ -44,5 +43,5 @@
 }
 
 .wd-kanbas-navigation li.wd-account.wd-active i {
-	color: red;
+	color: grey;
 }

@@ -10,9 +10,7 @@ body * {
 }
 
 .wd-screen {
-	width: 100%;
 	height: 100%;
-  border-color: red;
 }
 
 .wd-screen > tbody > tr > td {

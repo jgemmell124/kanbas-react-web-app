@@ -1,4 +1,29 @@
 .wd-course-card {
-	width: 260px;
-	margin: 15px;
+	width: 280px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wd-course-card img {
+  height: 150px;
+  width: auto;
+}
+
+.wd-course-card p {
+  color: grey;
+}
+
+.wd-course-card i {
+  color: grey;
+  font-size: 20px;
+}
+
+p.card-title {
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
 }

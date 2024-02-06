@@ -46,3 +46,16 @@
 	display: inline-block;
 	width: 100%;
 }
+
+.wd-button-container > div {
+  margin: 5px;
+}
+
+.wd-button-container > div {
+  margin: 5px;
+}
+
+.wd-button-container.wd-button {
+  border-color: #dee2e6;
+  background-color: white;
+}
