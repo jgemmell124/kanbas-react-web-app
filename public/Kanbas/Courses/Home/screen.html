@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- Implement links to Kanbas and Course Navigation -->
-    <div class="d-flex">
+    <div class="d-flex" style="width: 100%;">
       <div class="d-none d-md-block">
         <ul class="wd-kanbas-navigation">
           <li>
@@ -86,31 +86,72 @@
       <div class="d-none d-md-block">
         <ul class="wd-navigation">
           <li class="wd-active">
-            <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-          <li>
-            <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+            <a href="/Kanbas/Courses/Home/screen.html">Home</a>
           </li>
-          <li><a href="http://piazza.com">Piazza</a></li>
-          <li><a href="#">Zoom</a></li>
+          <li>
+            <a href="#">Modules</a>
+          </li>
+          <li>
+            <a href="#">Piazza</a>
+          </li>
+          <li>
+            <a href="#">Zoom Meetings</a>
+          </li>
           <li>
             <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
           </li>
-          <li><a href="#">Quizzes</a></li>
-          <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-          <li><a href="#">People</a></li>
+          <li>
+            <a href="#">Quizzes</a>
+          </li>
+          <li>
+            <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+          </li>
+          <li>
+            <a href="#">People</a>
+          </li>
+          <li>
+            <a href="#">Panopto Video</a>
+          </li>
+          <li>
+            <a href="#">Discussions</a>
+          </li>
+          <li>
+            <a href="#">Announcements</a>
+          </li>
+          <li>
+            <a href="#">Pages</a>
+          </li>
+          <li>
+            <a href="#">Files</a>
+          </li>
+          <li>
+            <a href="#">Rubrics</a>
+          </li>
+          <li>
+            <a href="#">Outcomes</a>
+          </li>
+          <li>
+            <a href="#">Collaborations</a>
+          </li>
+          <li>
+            <a href="#">Syllabus</a>
+          </li>
+          <li>
+            <a href="#">Settings</a>
+          </li>
         </ul>
-      </div>
-      <div class="flex-fill">
-        <!-- Copy Course Home here -->
 
-        <!-- Implement buttons Collapse All, View Progress, etc. here -->
-        <!-- Implement buttons Collapse All, View Progress, etc. here -->
-        <div class="d-flex justify-content-end wd-button-container">
+      </div>
+      <div class="flex-fill" style="margin: 20px">
+        <!-- Buttons here -->
+        <!-- group of 4 buttons in a row that are left aligned with a margin of 5 -->
+
+        <div class="d-flex justify-content-end wd-button-group">
           <div class="p2">
-            <button type="button" class="btn btn-light wd-button">Collapse All</button>
+            <button type="button" class="btn btn-light">Collapse All</button>
           </div>
           <div class="p2">
-            <button type="button" class="btn btn-light wd-button">View Progress</button>
+            <button type="button" class="btn btn-light">View Progress</button>
           </div>
           <div class="p2">
             <select class="form-select">
@@ -118,14 +159,23 @@
             </select>
           </div>
           <div class="p2">
-            <button type="button" class="btn btn-danger">+ Module</button>
+            <button type="button" class="btn btn-danger">
+              <span>
+                + Module
+              </span>
+            </button>
+          </div>
+          <div class="p2">
+            <button type="button" class="btn btn-light" style="height: 100%;">
+              <span>
+                <i class="fa fa-ellipsis-v"></i>
+              </span>
+            </button>
           </div>
         </div>
-
         <hr/>
-
+        <!-- Modules -->
         <ul class="list-group wd-modules">
-
           <!-- 1 -->
           <li class="list-group-item">
             <div>
@@ -214,7 +264,7 @@
               <!-- sub list -->
               <li class="list-group-item">
                 <i class="fa fa-ellipsis-v"></i>
-                <span class="wd-sublist">Full stack Developer = Chapter 2 Creating User Interface</span>
+                <span class="wd-sublist">Full stack Developer - Chapter 2 Creating User Interface</span>
                 <span class="float-end">
                   <i class="fa fa-check-circle text-success"></i>
                   <i class="fa fa-ellipsis-v ms-2"></i>
@@ -330,46 +380,111 @@
 
       </div>
       <div class="flex-grow-0 me-2 d-none d-lg-block" style="width: 250px">
-        <!-- Implement Course Status here -->
-        <h1>Course Status</h1>
-        <button>Publish</button>
-        <button>Unpublish</button>
-        <ul>
-          <li>
-            <a href="#">Import Existing Content</a>
-          </li>
-          <li>
-            <a href="#">Import From Commons</a>
-          </li>
-          <li>
-            <a href="#">Choose Home Page</a>
-          </li>
-          <li>
-            <a href="#">View Course Stream</a>
-          </li>
-          <li>
-            <a href="#">New Announcement</a>
-          </li>
-          <li>
-            <a href="#">New Analytics</a>
-          </li>
-          <li>
-            <a href="#">View Course Notifications</a>
-          </li>
-        </ul>
-        <h1>Comming Up</h1>
-        <a href="#">View Calender</a>
-        <ul>
-          <li>
-            <a href="#">Lecture CS4500 Sep 7 at 11:45am</a>
-          </li>
-          <li>
-            <a href="#">Lecture CS4500 Sep 11 at 11:45am</a>
-          </li>
-          <li>
-            <a href="#">Lecture CS4500 Sep 11 at 6pm</a>
-          </li>
-        </ul>
+          <h3>Course Status</h3>
+
+          <div class="btn-group" style="width: 100%;">
+            <button class="btn btn-light"><i class="fa-solid fa-ban"></i> Unpublish</button>
+            <button disabled class="btn btn-success">
+              <i class="fa-regular fa-circle-check"></i> Published
+            </button>
+          </div>
+
+          <ul class="wd-status-button-group">
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-solid fa-file-import"></i>
+                  Import Existing Content
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-solid fa-file-import"></i>
+                  Import From Commons
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-solid fa-crosshairs"></i>
+                  Choose Home Page
+                </button>
+            </li>
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-regular fa-eye"></i>
+                  View Course Stream
+                </button>
+            </li>
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  New Announcement
+                </button>
+            </li>
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-solid fa-chart-simple"></i>
+                  New Analytics
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <button class="btn btn-light">
+                  <i class="fa-regular fa-bell"></i>
+                  View Course Notifications
+                </button>
+              </a>
+            </li>
+          </ul>
+          <!-- todo -->
+          <div style="margin-bottom: 3px; border-bottom: 1px solid lightgrey;">
+            <h6 style="margin: 0;"><strong>To Do</strong></h6>
+          </div>
+          <ul class="fa-ul">
+            <li>
+              <i class="fa-li fa-regular fa-check-square"></i>
+              <a href="#">Grade A1 - ENV + HTML</a>
+              <br/>
+              <p>100 points - Sep 18 at 11:59pm</p>
+            </li>
+          </ul>
+          <br/>
+          <div style="margin-bottom: 3px; border-bottom: 1px solid lightgrey; overflow: hidden; padding: 0;">
+            <h6 class="float-start" style="margin: 0;"><strong>Coming Up</strong></h6>
+            <div class="float-end">
+              <i class="fa-regular fa-calendar"></i> 
+              <a href="#">View Calender</a>
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+          <ul class="fa-ul">
+            <li>
+              <i class="fa-li fa-regular fa-calendar"></i>
+              <a href="#">Lecture</a>
+              <br/>
+              <p>CS4500.3342.2132 <br/> Sep 7 at 11:45 am</p>
+            </li>
+            <li>
+              <i class="fa-li fa-regular fa-calendar"></i>
+              <a href="#">CS5610 SP23 Lecture</a>
+              <br/>
+              <p>CS4550.3342.2132 <br/> Sep 11 at 6 pm</p>
+            </li>
+            <li>
+              <i class="fa-li fa-regular fa-calendar"></i>
+              <a href="#">CS5610 Web Development Summer 1</a>
+              <br/>
+              <p>CS4500.3342.2132 <br/> Sep 11 at 6pm</p>
+            </li>
+          </ul>
       </div>
     </div>
   </body>

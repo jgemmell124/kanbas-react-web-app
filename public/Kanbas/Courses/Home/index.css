@@ -60,3 +60,38 @@
   border-color: #dee2e6;
   background-color: white;
 }
+
+.wd-modules > li > ul > li > ul {
+  width: 100%;
+  list-style: none;
+  border-top: 1px solid gray !important;
+}
+
+.wd-sublist {
+  margin-left: 50px;
+}
+
+.wd-modules > li > ul > li > ul {
+  display: inline-block;
+  width: 100%;
+}
+
+.wd-button-group div {
+  margin-right: 5px;
+}
+
+.wd-status-button-group {
+  margin-top: 10px;
+  width: 100%;
+  padding: 0px;
+}
+
+.wd-status-button-group li {
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.wd-status-button-group button {
+  width: 100%;
+  text-align: left;
+}
