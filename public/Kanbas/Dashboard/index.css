@@ -1,3 +1,14 @@
+.wd-dashboard {
+  color: grey;
+  text-decoration: center;
+  margin: 0;
+}
+
+.wd-dashboard h1 {
+  margin: 0;
+  padding: 0;
+}
+
 .wd-course-card {
 	width: 300px;
   padding: 0px;
@@ -22,7 +33,6 @@
 .wd-course-card p {
   color: grey;
 }
-
 
 .wd-course-card i {
   color: grey;
