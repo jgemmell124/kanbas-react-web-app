@@ -14,5 +14,6 @@ body * {
 }
 
 .wd-screen > tbody > tr > td {
+  height: 100%;
   padding: 0;
 }
