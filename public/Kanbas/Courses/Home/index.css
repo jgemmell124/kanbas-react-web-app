@@ -56,6 +56,7 @@
 }
 
 .wd-button-container.wd-button {
+  text-align: left;
   border-color: #dee2e6;
   background-color: white;
 }

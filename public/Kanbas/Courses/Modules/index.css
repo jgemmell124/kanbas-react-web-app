@@ -46,3 +46,36 @@
   display: inline-block;
   width: 100%;
 }
+
+.wd-button-group div {
+  margin-right: 5px;
+}
+
+.wd-status p {
+  text-decoration: none;
+  color: grey;
+}
+
+.wd-status a {
+  text-decoration: none;
+  color: rgb(220, 53, 69);
+}
+
+.wd-status li {
+  list-style-type: none;
+} 
+
+.wd-status-button-group {
+  margin-top: 10px;
+  width: 100%;
+  padding: 0px;
+}
+
+.wd-status-button-group li {
+  margin-bottom: 5px;
+}
+
+.wd-status-button-group button {
+  width: 100%;
+  text-align: left;
+}
