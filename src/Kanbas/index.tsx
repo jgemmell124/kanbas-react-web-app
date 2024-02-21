@@ -7,7 +7,7 @@ function Kanbas() {
   return (
     <div className="d-flex" style={{ height: '100vh'}}>
       <KanbasNavigation />
-      <div style={{ flexGrow: 1 }}>
+      <div style={{ flexGrow: 1, overflow: 'scroll' }}>
         <Routes>
           <Route path="/" element={<Navigate to="Dashboard" />} />
           <Route path="Account" element={<h1>Account</h1>} />

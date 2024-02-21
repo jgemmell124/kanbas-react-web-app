@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
+import { BsPencilSquare } from "react-icons/bs";
 import { courses } from "../Database";
 import './index.css'
-import { BsPencilSquare } from "react-icons/bs";
 
 function Dashboard() {
-
 
   return (
     <div className="p-4">
       <h1>Dashboard</h1>              <hr />
-      <h2>Published Courses (12)</h2> <hr />
+      <h2>Published Courses (8)</h2> <hr />
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
