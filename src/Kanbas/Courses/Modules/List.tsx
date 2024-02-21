@@ -3,14 +3,49 @@ import "./index.css";
 import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 function ModuleList() {
   const { courseId } = useParams();
   const modulesList = modules.filter((module) => module.course === courseId);
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
+
+  const buttonStyle = {
+    borderColor: '#dee2e6',
+    border: '1px solid #dee2e6',
+  };
+
   return (
     <>
-      {/* <!-- Add buttons here --> */}
+      <div className="d-flex justify-content-end wd-button-group">
+          <div className="p2">
+            <button  style={buttonStyle} type="button" className="btn btn-light">Collapse All</button>
+          </div>
+          <div className="p2">
+            <button style={buttonStyle} type="button" className="btn btn-light">View Progress</button>
+          </div>
+          <div className="p2">
+            <select className="form-select">
+              <option>Publish All</option>
+            </select>
+          </div>
+          <div className="p2">
+            <button type="button" className="btn btn-danger">
+              <span>
+                + Module
+              </span>
+            </button>
+          </div>
+          <div className="p2">
+          <button type="button" className="btn btn-light" style={{ height: '100%', ...buttonStyle }}>
+              <span>
+              <BsThreeDotsVertical />
+              </span>
+            </button>
+          </div>
+        </div>
+        <hr/>
+
       <ul className="list-group wd-modules">
         {modulesList.map((module, index) => (
           <li key={index}
