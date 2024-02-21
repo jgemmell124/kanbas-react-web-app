@@ -1,6 +1,7 @@
 import { courses } from "../../Kanbas/Database";
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useParams, Link } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
+import { IoChevronForward } from "react-icons/io5";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -10,11 +11,22 @@ import Assignments from "./Assignments";
 function Courses() {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
+  const page = useLocation();
 
   return (
     <div>
-      <h1 style={{ color: 'red', marginLeft: '20px' }}><HiMiniBars3 /> Course {course?.name}</h1>
-       <CourseNavigation />
+
+      <div className="d-none d-md-block" style={{ paddingLeft: '20px', display: 'flex', verticalAlign: 'middle' }}>
+        <h3 style={{ color: 'red', display: 'inline'}}>
+          <HiMiniBars3 /> {course?.name}
+        </h3>
+        <h4 style={{ display: 'inline', color: 'grey' }}> 
+          <span> </span>
+          <IoChevronForward /> {page.pathname.split('/').slice(-1)} 
+        </h4>
+      </div>
+
+      <CourseNavigation />
       <div>
         <div
           className="overflow-y-scroll position-fixed bottom-0 end-0"
