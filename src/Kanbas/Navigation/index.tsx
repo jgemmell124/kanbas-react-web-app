@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import "./index.css";
-import { FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt, FaInbox, FaRegClock } from "react-icons/fa";
+import { FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt, FaInbox, FaRegClock, FaRegQuestionCircle } from "react-icons/fa";
+import { TbCircleLetterC } from "react-icons/tb";
+import { LuMonitorDown } from "react-icons/lu";
 
 function KanbasNavigation() {
 
@@ -17,9 +19,9 @@ function KanbasNavigation() {
     { label: "Calendar",  icon: <FaRegCalendarAlt className="fs-2" style={iconStyle}/> },
     { label: "Inbox",  icon: <FaInbox className="fs-2" style={iconStyle}/> },
     { label: "History",  icon: <FaRegClock className="fs-2" style={iconStyle}/> },
-    { label: "Studio",  icon: <FaRegCalendarAlt className="fs-2" style={iconStyle}/> },
-    { label: "Commons",  icon: <FaRegCalendarAlt className="fs-2" style={iconStyle}/> },
-    { label: "Help",  icon: <FaRegCalendarAlt className="fs-2" style={iconStyle}/> },
+    { label: "Studio",  icon: <LuMonitorDown className="fs-2" style={iconStyle}/> },
+    { label: "Commons",  icon: <TbCircleLetterC className="fs-2" style={iconStyle}/> },
+    { label: "Help",  icon: <FaRegQuestionCircle className="fs-2" style={iconStyle}/> },
   ];
   const { pathname } = useLocation();
   return (

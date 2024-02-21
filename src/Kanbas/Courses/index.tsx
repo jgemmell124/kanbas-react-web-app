@@ -13,7 +13,7 @@ function Courses() {
 
   return (
     <div>
-      <h1><HiMiniBars3 /> Course {course?.name}</h1>
+      <h1 style={{ color: 'red', marginLeft: '20px' }}><HiMiniBars3 /> Course {course?.name}</h1>
        <CourseNavigation />
       <div>
         <div
