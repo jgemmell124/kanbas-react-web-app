@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom';
 import { FaFileImport } from "react-icons/fa6";
-import { SlCalender } from 'react-icons/sl';
+import { SlCalender, SlTarget } from 'react-icons/sl';
 import { FaCheckCircle } from 'react-icons/fa';
+import { RiBarChart2Fill } from "react-icons/ri";
+import { GrAnnounce } from "react-icons/gr";
+import { CiBellOn } from "react-icons/ci";
 
 function Status() {
 
   const buttons = [
     { label: 'Import Existing Content', icon: <FaFileImport /> },
     { label: 'Import From Commons', icon: <FaFileImport /> },
-    { label: 'Choose Home Page', icon: <FaFileImport /> },
-    { label: 'View Course Stream', icon: <FaFileImport /> },
-    { label: 'New Announcement', icon: <FaFileImport /> },
-    { label: 'New Analytics', icon: <FaFileImport /> },
-    { label: 'View Course Notifications', icon: <FaFileImport /> },
+    { label: 'Choose Home Page', icon: <SlTarget /> },
+    { label: 'View Course Stream', icon: <RiBarChart2Fill /> },
+    { label: 'New Announcement', icon: <GrAnnounce /> },
+    { label: 'New Analytics', icon: <RiBarChart2Fill /> },
+    { label: 'View Course Notifications', icon: <CiBellOn /> },
   ];
 
   const buttonStyle = {
@@ -69,12 +72,12 @@ function Status() {
       <div>
         <h6 className="float-start" ><strong>Coming Up</strong></h6>
         <div className="float-end">
-          <i className="fa-regular fa-calendar"></i> 
-            <Link to="#" style={{ textDecoration: 'none', color: 'red'}}>View Calender</Link>
+            <SlCalender style={{ color: 'red' }}/>
+            <Link to="#" style={{ textDecoration: 'none', color: 'red'}}> View Calender</Link>
         </div>
       </div>
       <div style={{ clear: 'both' }}></div>
-      <ul style={{ listStyle: 'none', paddingLeft: '1rem' }}>
+      <ul style={{ listStyle: 'none' }}>
         {comingUp.map((item, index) => (
           <li key={index}>
             <SlCalender style={{ color: 'red' }}/>
