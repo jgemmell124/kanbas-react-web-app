@@ -15,7 +15,6 @@ function Courses() {
 
   return (
     <div>
-
       <div className="d-none d-md-block" style={{ paddingLeft: '20px', display: 'flex', verticalAlign: 'middle' }}>
         <h3 style={{ color: 'red', display: 'inline'}}>
           <HiMiniBars3 /> {course?.name}
