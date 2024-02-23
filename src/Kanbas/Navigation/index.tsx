@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./index.css";
 import { FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt, FaInbox, FaRegClock, FaRegQuestionCircle, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { TbCircleLetterC } from "react-icons/tb";
 import { LuMonitorDown } from "react-icons/lu";
-import { BsThreeDots } from "react-icons/bs";
 import { HiMiniBars3 } from "react-icons/hi2";
 
 function KanbasNavigation() {
@@ -38,6 +37,8 @@ function KanbasNavigation() {
     { label: "Help",  icon: <FaRegQuestionCircle className="fs-2" style={iconStyle}/> },
   ];
 
+  const parsedPath = pathname?.split('/');
+
   return (
     <>
       <div className="d-none d-md-block">
@@ -54,20 +55,24 @@ function KanbasNavigation() {
           ))}
         </ul>
       </div>
-      <div className="d-block d-md-none" style={{ width: '100%' }}>
-        <nav className="navbar navbar-expand-lg" style={{ backgroundColor: 'black' }}>
-          <button className="navbar-toggler" type="button" onClick={toggleShow}>
-            <HiMiniBars3 className="text-white" />
-          </button>
-          <Link className="navbar-brand" to="#">Navbar w/ text</Link>
-          <button className="navbar-toggler" type="button" onClick={toggleShow}>
-            <FaChevronDown className="text-white" />
-          </button>
-          <div className={`collapse navbar-collapse ${show ? 'show' : ''}`}>
+      <div className="d-md-none" style={{ width: '100%', marginBottom: '15px' }}>
+        <nav style={{ padding: '0px'}} className="navbar  bg-dark d-md-none">
+            <button className="navbar-toggler" type="button" onClick={toggleShow}>
+              <HiMiniBars3 className="text-white" />
+            </button>
+            <Link className="navbar-brand" to="#" style={{ color: 'white' }}>{ parsedPath[3] ?? parsedPath[2] }</Link>
+            <button className="navbar-toggler" type="button">
+              <FaChevronDown className="text-white" />
+            </button>
+          <div className={`collapse navbar-collapse ${show ? 'show' : ''}`} style={{ backgroundColor: 'white', border: '1px solid grey' }}>
             <ul className="navbar-nav mr-auto">
               {links.map((link, index) => (
-                <li key={index} className={` ${pathname.includes(link.label) ? "wd-active" : ""} ${link.classes ?? ''}`}>
-                  <Link style={linkStyle} to={`/Kanbas/${link.label}`}> {link.icon} {link.label} </Link>
+                <li
+                  key={index}
+                  className={` nav-item ${pathname.includes(link.label) ? "wd-active" : ""} ${link.classes ?? ''}`}
+                  style={{ margin: '5px' }}
+                >
+                  <Link onClick={toggleShow} style={linkStyle} to={`/Kanbas/${link.label}`}> {link.icon} {link.label} </Link>
                 </li>
               ))}
             </ul>

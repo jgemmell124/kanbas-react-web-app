@@ -47,11 +47,30 @@ function Assignments() {
           <ul className="list-group">
             {assignmentList.map((assignment, index) => (
               <li key={index} className="list-group-item">
-                <FaEllipsisV className="me-2" />
-                <Link
-                  to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
-                <span className="float-end">
-                  <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
+                <div className="d-flex" style={{ alignItems: 'center'}}>
+                  <FaEllipsisV className="me-2" />
+                  <div style={{ marginLeft: '10px', marginRight: '25px'}}>
+                    <Link
+                      style={{ 
+                        textDecoration: 'none',
+                        color: 'black'
+                      }}
+                      to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>
+                      <strong>{assignment.title}</strong>
+                    </Link>
+                    <br/>
+                    <span className="text-muted">
+                      <Link to={'#'} style={{ textDecoration: 'none', color: 'red' }}> Multiple Modules </Link>  |
+                      <strong> Due</strong> Oct 1, 2021 |
+                      100 pts
+                    </span>
+                  </div>
+                  <div style={{ marginLeft: 'auto' }}>
+                    <span style={{ whiteSpace: 'nowrap' }}>
+                      <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" />
+                    </span>
+                  </div>
+                </div>
               </li>))}
           </ul>
         </li>

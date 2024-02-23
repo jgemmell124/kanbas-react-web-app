@@ -11,7 +11,7 @@ function Home() {
         </div>
         <div
           className="flex-grow-0 me-2 d-none d-lg-block"
-          style={{ width: '250px', margin: '25px', overflow: 'scroll' }}
+          style={{ width: '250px', marginRight: '25px', marginLeft: '25px', overflow: 'scroll' }}
         >
           <Status />
         </div>

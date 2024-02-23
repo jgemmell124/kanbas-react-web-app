@@ -21,8 +21,8 @@ function Dashboard() {
                     style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                     {course.name}
                   </Link>
-                  <p className="card-subtitle">{course._id}.32322.202430</p>
-                  <p className="card-text">202430_1_Spring 2024 Full Term</p>
+                  <p className="card-subtitle">{course.number}.{course._id}.{course.endDate}</p>
+                  <p className="card-text">{course.startDate} Full Term</p>
                   <Link to={`/Kanbas/Courses/${course._id}/Home`} className="stretched-link btn">
                     <BsPencilSquare className="bs" />
                   </Link>
