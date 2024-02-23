@@ -10,9 +10,10 @@ function ModuleList() {
   const modulesList = modules.filter((module) => module.course === courseId);
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
 
-  const buttonStyle = {
+  const buttonStyle: React.CSSProperties = {
     borderColor: '#dee2e6',
     border: '1px solid #dee2e6',
+    height: '100%',
   };
 
   return (
@@ -25,7 +26,7 @@ function ModuleList() {
             <button style={buttonStyle} type="button" className="btn btn-light">View Progress</button>
           </div>
           <div className="p2">
-            <select className="form-select">
+            <select className="form-select" style={buttonStyle}>
               <option>Publish All</option>
             </select>
           </div>

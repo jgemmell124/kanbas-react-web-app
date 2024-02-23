@@ -6,12 +6,12 @@ function Home() {
     <div>
       <h2>Home</h2>
       <div className="d-flex">
-        <div className="flex-fill" style={{ margin: '20px'}}>
+        <div className="flex-fill">
           <ModuleList />
         </div>
         <div
           className="flex-grow-0 me-2 d-none d-lg-block"
-          style={{ width: '250px', marginRight: '25px', overflow: 'scroll' }}
+          style={{ width: '250px', margin: '25px', overflow: 'scroll' }}
         >
           <Status />
         </div>
