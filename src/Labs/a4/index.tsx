@@ -9,18 +9,19 @@ import ObjectStateVariable from "./ObjectStateVariable";
 import ParentStateComponent from "./ParentStateComponent";
 import PassingDataOnEvent from "./PassingDataOnEvent";
 import PassingFunctions from "./PassingFunctions";
+import ReduxExamples from "./ReduxExamples";
+import TodoList from "./ReduxExamples/todos/TodoList";
 import StringStateVariables from "./StringStateVariables";
 
 const Assignment4 = () => {
   function sayHello() {
     alert("Hello");
   }
-  const handleClick = (parameter = "Hello") => {
-  console.log(parameter)
-}
+
   return(
     <>
       <h1>Assignment 4</h1>
+      <ReduxExamples/>
       <ClickEvent/>
       <PassingDataOnEvent/>
       <PassingFunctions theFunction={sayHello}/>
@@ -32,9 +33,7 @@ const Assignment4 = () => {
       <ObjectStateVariable/>
       <ArrayStateVariable/>
       <ParentStateComponent/>
-      <button onClick={handleClick}>
-
-      </button>
+      <TodoList/>
     </>
   );
 };
