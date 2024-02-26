@@ -1,5 +1,4 @@
 import React from "react";
-import { courses } from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useLocation, useParams, Link } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { IoChevronForward } from "react-icons/io5";
@@ -8,8 +7,16 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 
+type Course = {
+  _id: string;
+  name: string;
+  number: string;
+  startDate: string;
+  endDate: string;
+  image: string;
+};
 
-function Courses() {
+function Courses({ courses }: { courses: Course[] }) {
   const { "*": path, courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   const crumbs = path?.split('/')
