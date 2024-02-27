@@ -34,14 +34,17 @@ function CourseField({ course, setCourse, addNewCourse, updateCourse }: CourseFi
     {
       label: 'Course Number',
       value: course.number,
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, number: e.target.value }),
     },
     {
       label: 'Start Date',
       value: course.startDate,
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, startDate: e.target.value }),
     },
     {
       label: 'End Date',
       value: course.endDate,
+      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, endDate: e.target.value }),
     },
   ];
 
@@ -62,7 +65,7 @@ function CourseField({ course, setCourse, addNewCourse, updateCourse }: CourseFi
       <div className='form-group' key={index}>
         <label>{form.label}</label>
         <input value={form.value} className="form-control"
-            onChange={(e) => setCourse({ ...course, startDate: e.target.value }) }/>
+            onChange={form.onChange}/>
         </div>
       ))}
       <div className="d-flex justify-content-start" style={{ paddingTop: '5px' }}>

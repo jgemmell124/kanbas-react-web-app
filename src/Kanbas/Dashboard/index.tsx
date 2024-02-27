@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BsPencilSquare } from "react-icons/bs";
+import { FaTrash, FaEdit } from "react-icons/fa";
 import './index.css'
 import CourseField from "./CourseField";
 
@@ -39,31 +39,39 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
-            <div key={course._id} className="col wd-course-card" style={{ width: 300 }}>
+            <div key={course._id} className="col wd-course-card" style={{ width: 300, height: 'auto' }}>
               <div className="card">
                 <img alt="class-img" src={`/images/${course.image}`} className="card-img-top"
                   style={{ height: 150 }}/>
                 <div className="card-body">
-                  <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
-                    style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
-                    {course.name}
-                    <button onClick={(event) => {
-                      event.preventDefault();
-                      deleteCourse(course._id);
-                    }}>
-                      Delete
-                    </button>
-                    <button onClick={(event) => {
-                      event.preventDefault();
-                      setCourse(course);
-                    }}>
-                      Edit
-                    </button>
+                  <div className="d-flex justify-content-between" style={{ alignItems: 'center'}}>
+                    <div>
+                      <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
+                        style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
+                        {course.name}
+                      </Link>
+                    </div>
+                    <div className="d-flex">
+                      <div title="Delete" className="btn" onClick={(event) => {
+                        event.preventDefault();
+                        deleteCourse(course._id);
+                      }}>
+                        <FaTrash />
+                      </div>
+                      <div title="Edit" className="btn" onClick={(event) => {
+                        event.preventDefault();
+                        setCourse(course);
+                      }}>
+                        <FaEdit />
+                      </div>
+                    </div>
+                  </div>
+                  <Link to={`/Kanbas/Courses/${course._id}/Home`} style={{ textDecoration: 'none' }}>
+                    <p className="card-subtitle">{course.number}.{course._id}.{course.endDate}</p>
+                    <p className="card-text">{course.startDate} Full Term</p>
                   </Link>
-                  <p className="card-subtitle">{course.number}.{course._id}.{course.endDate}</p>
-                  <p className="card-text">{course.startDate} Full Term</p>
-                  <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn">
-                    <BsPencilSquare className="bs" />
+                  <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-light">
+                    Go
                   </Link>
                 </div>
               </div>
