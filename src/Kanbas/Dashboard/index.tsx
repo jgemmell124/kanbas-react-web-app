@@ -56,13 +56,13 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                         event.preventDefault();
                         deleteCourse(course._id);
                       }}>
-                        <FaTrash />
+                        Delete <FaTrash />
                       </div>
                       <div title="Edit" className="btn" onClick={(event) => {
                         event.preventDefault();
                         setCourse(course);
                       }}>
-                        <FaEdit />
+                        Edit <FaEdit />
                       </div>
                     </div>
                   </div>
