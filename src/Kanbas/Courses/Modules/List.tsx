@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
-import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaEdit, FaTrash } from "react-icons/fa";
+import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaEdit, FaTrash, FaPencilAlt } from "react-icons/fa";
 import { useParams } from "react-router";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
@@ -28,33 +28,33 @@ function ModuleList() {
   return (
     <>
       <div className="d-flex justify-content-end wd-button-group">
-          <div className="p2">
-            <button  style={buttonStyle} type="button" className="btn btn-light">Collapse All</button>
-          </div>
-          <div className="p2">
-            <button style={buttonStyle} type="button" className="btn btn-light">View Progress</button>
-          </div>
-          <div className="p2">
-            <select className="form-select" style={buttonStyle}>
-              <option>Publish All</option>
-            </select>
-          </div>
-          <div className="p2">
-            <button type="button" className="btn btn-danger">
-              <span>
-                + Module
-              </span>
-            </button>
-          </div>
-          <div className="p2">
-          <button type="button" className="btn btn-light" style={{ height: '100%', ...buttonStyle }}>
-              <span>
-              <BsThreeDotsVertical />
-              </span>
-            </button>
-          </div>
+        <div className="p2">
+          <button  style={buttonStyle} type="button" className="btn btn-light">Collapse All</button>
         </div>
-        <hr/>
+        <div className="p2">
+          <button style={buttonStyle} type="button" className="btn btn-light">View Progress</button>
+        </div>
+        <div className="p2">
+          <select className="form-select" style={buttonStyle}>
+            <option>Publish All</option>
+          </select>
+        </div>
+        <div className="p2">
+          <button type="button" className="btn btn-danger">
+            <span>
+              + Module
+            </span>
+          </button>
+        </div>
+        <div className="p2">
+          <button type="button" className="btn btn-light" style={{ height: '100%', ...buttonStyle }}>
+            <span>
+              <BsThreeDotsVertical />
+            </span>
+          </button>
+        </div>
+      </div>
+      <hr/>
 
       <ul className="list-group wd-modules">
         <li className="list-group-item">
@@ -92,51 +92,50 @@ function ModuleList() {
         {moduleList
           .filter((module) => module.course === courseId)
           .map((module, index) => (
-          <li key={index}
-            className="list-group-item"
-            /* onClick={() => setSelectedModule(module)}> */
-              >
-
-            <div>
-              <FaEllipsisV className="me-2" />
-              {module.name}
+            <li key={index}
+              className="list-group-item"
+              onClick={() => setSelectedModule(module)}
+            >
+              <div>
+                <FaEllipsisV className="me-2" />
+                {module.name}
                 <button
-                  style={{ margin: '5px', backgroundColor: 'transparent' }}
-                  /* className="btn btn-light" */
+                  title="Edit Module"
+                  style={{ marginLeft: '4px', padding: '2px', borderRadius: '4px' }}
+                  className="btn btn-secondary"
                   onClick={() => dispatch(setModule(module))}>
-                  <FaEdit /> Edit 
-                  {/* <FaEdit /> */}
+                  <FaPencilAlt /> 
                 </button>
 
                 <button
-                  style={{ margin: '5px', backgroundColor: 'transparent'}}
-                  className="btn btn-light"
+                  title="Delete Module"
+                  style={{ marginLeft: '4px', padding: '2px', borderRadius: '4px' }}
+                  className="btn btn-secondary"
                   onClick={() => dispatch(deleteModule(module._id))}>
-                  <FaTrash /> Delete
-                  {/* <FaTrash /> */}
+                  <FaTrash />
                 </button>
-              <span className="float-end">
-                <FaCheckCircle className="text-success" />
-                <FaPlusCircle className="ms-2" />
-                <FaEllipsisV className="ms-2" />
-              </span>
-            </div>
-            {module._id === module._id && (
-              <ul className="list-group">
-                {module.lessons?.map((lesson: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }, index: React.Key | null | undefined) => (
-                  <li className="list-group-item" key={index}>
-                    <FaEllipsisV className="me-2" />
-                    {lesson.name}
-                    <span className="float-end">
-                      <FaCheckCircle className="text-success" />
-                      <FaEllipsisV className="ms-2" />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
+                <span className="float-end">
+                  <FaCheckCircle className="text-success" />
+                  <FaPlusCircle className="ms-2" />
+                  <FaEllipsisV className="ms-2" />
+                </span>
+              </div>
+              {selectedModule._id === module._id && (
+                <ul className="list-group">
+                  {module.lessons?.map((lesson: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }, index: React.Key | null | undefined) => (
+                    <li className="list-group-item" key={index}>
+                      <FaEllipsisV className="me-2" />
+                      {lesson.name}
+                      <span className="float-end">
+                        <FaCheckCircle className="text-success" />
+                        <FaEllipsisV className="ms-2" />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
       </ul>
     </>
   );

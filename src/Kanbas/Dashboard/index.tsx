@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaTrash, FaPencilAlt } from "react-icons/fa";
 import './index.css'
 import CourseField from "./CourseField";
 
@@ -52,17 +52,17 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                       </Link>
                     </div>
                     <div className="d-flex">
-                      <div title="Delete" className="btn" onClick={(event) => {
+                      <div title="Delete" className="btn btn-light" onClick={(event) => {
                         event.preventDefault();
                         deleteCourse(course._id);
                       }}>
-                        Delete <FaTrash />
+                        <FaTrash />
                       </div>
-                      <div title="Edit" className="btn" onClick={(event) => {
+                      <div title="Edit" className="btn btn-light" onClick={(event) => {
                         event.preventDefault();
                         setCourse(course);
                       }}>
-                        Edit <FaEdit />
+                        <FaPencilAlt />
                       </div>
                     </div>
                   </div>

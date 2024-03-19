@@ -19,32 +19,30 @@ type CourseFieldsProps = {
 
 function CourseField({ course, setCourse, addNewCourse, updateCourse }: CourseFieldsProps) {
 
-  const buttonStyle: React.CSSProperties = {
-    borderColor: '#dee2e6',
-    border: '1px solid #dee2e6',
-    height: '100%',
+  const handleChange = (field: string, e: React.ChangeEvent<HTMLInputElement>) => {
+    setCourse({ ...course, [field]: e.target.value });
   };
 
   const forms = [
     {
       label: 'Course Name',
       value: course.name,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, name: e.target.value }),
+      field: 'name',
     },
     {
       label: 'Course Number',
       value: course.number,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, number: e.target.value }),
+      field: 'number',
     },
     {
       label: 'Start Date',
       value: course.startDate,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, startDate: e.target.value }),
+      field: 'startDate',
     },
     {
       label: 'End Date',
       value: course.endDate,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCourse({ ...course, endDate: e.target.value }),
+      field: 'endDate',
     },
   ];
 
@@ -65,13 +63,13 @@ function CourseField({ course, setCourse, addNewCourse, updateCourse }: CourseFi
       <div className='form-group' key={index}>
         <label>{form.label}</label>
         <input value={form.value} className="form-control"
-            onChange={form.onChange}/>
+            onChange={(e) => handleChange(form.field, e)}/>
         </div>
       ))}
       <div className="d-flex justify-content-start" style={{ paddingTop: '5px' }}>
         {buttons.map((button, index) => (
           <div style={{ paddingRight: '5px'}}>
-            <button key={index} className='btn btn-light' style={buttonStyle} onClick={button.onClick}>
+            <button key={index} className='btn btn-danger' onClick={button.onClick}>
               {button.label}
             </button>
           </div>
