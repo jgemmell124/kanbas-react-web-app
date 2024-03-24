@@ -1,5 +1,6 @@
-import React from "react";
-import { Navigate, Route, Routes, useLocation, useParams, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { IoChevronForward } from "react-icons/io5";
 import CourseNavigation from "./Navigation";
@@ -7,19 +8,23 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 
-type Course = {
-  _id: string;
-  name: string;
-  number: string;
-  startDate: string;
-  endDate: string;
-  image: string;
-};
-
-function Courses({ courses }: { courses: Course[] }) {
+function Courses() {
+  const COURSES_API = "http://localhost:4000/api/courses";
   const { "*": path, courseId } = useParams();
-  const course = courses.find((course) => course._id === courseId);
   const crumbs = path?.split('/')
+
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+
+
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
 
   return (
     <div>
