@@ -6,6 +6,7 @@ import Dashboard from "./Dashboard";
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
+import { COURSES_API } from "./Courses/Modules/client";
 
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
@@ -18,7 +19,7 @@ function Kanbas() {
     image: "/images/reactjs.jpg"
   });
 
-  const COURSES_API = "http://localhost:4000/api/courses";
+
   const findAllCourses = async () => {
     const response = await axios.get(COURSES_API);
     setCourses(response.data);

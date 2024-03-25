@@ -7,9 +7,9 @@ import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
+import { COURSES_API } from "./Modules/client";
 
 function Courses() {
-  const COURSES_API = "http://localhost:4000/api/courses";
   const { "*": path, courseId } = useParams();
   const crumbs = path?.split('/')
 
