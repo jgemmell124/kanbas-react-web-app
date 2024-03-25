@@ -20,6 +20,12 @@ export default function Profile() {
     await client.updateUser(profile);
   }
 
+  const signout = async () => {
+    await client.signout();
+    navigate("/project/signin");
+  };
+
+
   return (
     <div>
       <h1>Profile</h1>
@@ -115,9 +121,18 @@ export default function Profile() {
               style={{ width: '100%', maxWidth: "300px" }}
               onClick={save}
               type="button"
-              className="btn btn-danger btn-block mb-3"
+              className="btn btn-secondary btn-block mb-3"
             >
               Save
+            </button>
+            <br />
+            <button
+              style={{ width: '100%', maxWidth: "300px" }}
+              onClick={signout}
+              type="button"
+              className="btn btn-danger btn-block mb-3"
+            >
+              Sign Out
             </button>
           </form>
         </div>
