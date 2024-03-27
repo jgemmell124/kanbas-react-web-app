@@ -165,12 +165,12 @@ function WorkingWithArrays() {
           <span> Completed</span>
         </label>
 
-        <button style={{ width: '100%' }} className="btn btn-warning" onClick={postTodo}> Post Todo </button>
-        <button style={{ width: '100%' }} className="btn btn-secondary" onClick={updateTodo}> Update Todo </button>
-        <button style={{ width: '100%'}} className="btn btn-primary" onClick={createTodo} >
+        <button style={{ width: '100%' }} className="btn btn-warning m-1" onClick={postTodo}> Post Todo </button>
+        <button style={{ width: '100%' }} className="btn btn-secondary m-1" onClick={updateTodo}> Update Todo </button>
+        <button style={{ width: '100%'}} className="btn btn-primary m-1" onClick={createTodo} >
           Create Todo
         </button>
-        <button style={{ width: '100%'}} className="btn btn-success" onClick={updateTitle} >
+        <button style={{ width: '100%'}} className="btn btn-success m-1" onClick={updateTitle} >
           Update Title
         </button>
         { errorMessage &&
@@ -189,14 +189,16 @@ function WorkingWithArrays() {
                 type="checkbox"
                 readOnly
               />
-              {todo.title}
+              <p>
+                {todo.title}
+              </p>
               <p>{todo.description}</p>
               <p>{todo.due}</p>
               <div>
-                <button className="btn btn-danger" onClick={() => deleteTodo(todo)} >
+                <button className="btn btn-danger m-1" onClick={() => deleteTodo(todo)} >
                   Delete
                 </button>
-                <button className="btn btn-warning" onClick={() => fetchTodoById(todo.id)} >
+                <button className="btn btn-warning m-1" onClick={() => fetchTodoById(todo.id)} >
                   Edit
                 </button>
               </div>
