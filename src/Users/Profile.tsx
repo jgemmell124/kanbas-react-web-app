@@ -22,9 +22,8 @@ export default function Profile() {
 
   const signout = async () => {
     await client.signout();
-    navigate("/project/signin");
+    navigate("Kanbas/Profile/signin");
   };
-
 
   return (
     <div>
@@ -94,7 +93,7 @@ export default function Profile() {
                   setProfile({ ...profile, dob: e.target.value })}/>
             </div>
             <div className="form-outline mb-3">
-              <label className="form-label">Date of Birth</label>
+              <label className="form-label">Email</label>
               <input
                 type={"email"}
                 style={{ maxWidth: "300px" }}

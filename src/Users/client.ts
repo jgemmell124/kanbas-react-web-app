@@ -12,12 +12,12 @@ export interface User {
 };
 
 export const signin = async (credentials: User) => {
-  const response = await axios.post( `${USERS_API}/signin`, credentials );
+  const response = await axios.post(`${USERS_API}/signin`, credentials, { withCredentials: true });
   return response.data;
 };
 
 export const profile = async () => {
-  const response = await axios.post(`${USERS_API}/profile`);
+  const response = await axios.post(`${USERS_API}/profile`, {}, { withCredentials: true });
   return response.data;
 };
 
@@ -26,9 +26,19 @@ export const updateUser = async (user: any) => {
   return response.data;
 };
 
-
 export const findAllUsers = async () => {
   const response = await axios.get(`${USERS_API}`);
+  return response.data;
+};
+
+export const findUserById = async (userId: string) => {
+  const response = await axios.get(`${USERS_API}/${userId}`);
+  return response.data;
+};
+
+export const findUsersByRole = async (role: string) => {
+  const response = await
+    axios.get(`${USERS_API}?role=${role}`);
   return response.data;
 };
 
